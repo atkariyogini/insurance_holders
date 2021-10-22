@@ -1,7 +1,6 @@
 //const api_url = "<heroku_app_url>"
 const api_url = "https://jojeetawahisikandar.herokuapp.com/user"
-//const api_url = "https://yoginiatkari.gitlab.io/newproject"
-//const api_url = "http://localhost:8080/user"
+
 function loadData(records = []) {
 	var table_data = "";
 	for(let i=0; i<records.length; i++) {
@@ -45,14 +44,12 @@ function getDataById(id) {
 
 
 function postData() {
-	//alert("post function called")
 	var name = document.getElementById("name").value;
 	var age = document.getElementById("age").value;
 	var city = document.getElementById("city").value;
 	
 	data = {name: name, age: age, city: city};
-	//console.log(data)
-
+	
 	fetch(api_url, {
 		method: "POST",
 		headers: {
@@ -69,7 +66,7 @@ function postData() {
 }	
 
 
-/**function putData() {
+function putData() {
 	
 	var _id = document.getElementById("id").value;
 	var name = document.getElementById("name").value;
@@ -92,30 +89,7 @@ function postData() {
 		window.location.href = "index.html";
 	})
 }
-**/
-function putData() {
 
-	var _id = document.getElementById("id").value;
-	var name = document.getElementById("name").value;
-	var age = document.getElementById("age").value;
-	var city = document.getElementById("city").value;
-
-	data = {_id: _id, name: name, age: age, city: city};
-
-	fetch(api_url, {
-		method: "PUT",
-		headers: {
-		  'Accept': 'application/json',
-		  'Content-Type': 'application/json'
-		},
-		body: JSON.stringify(data)
-	})
-	.then((response) => response.json())
-	.then((data) => {
-		console.table(data);
-		window.location.href = "index.html";
-	})
-}
 
 function deleteData(id) {
 	user_input = confirm("Are you sure you want to delete this record?");
