@@ -1,7 +1,7 @@
 //const api_url = "<heroku_app_url>"
-//const api_url = "https://jojeetawahisikandar.herokuapp.com/user"
+const api_url = "https://jojeetawahisikandar.herokuapp.com/user"
 //const api_url = "https://yoginiatkari.gitlab.io/newproject"
-const api_url = "http://localhost:8080/user"
+//const api_url = "http://localhost:8080/user"
 function loadData(records = []) {
 	var table_data = "";
 	for(let i=0; i<records.length; i++) {
