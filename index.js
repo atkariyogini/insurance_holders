@@ -38,7 +38,7 @@ app.post("/user", async (req, res) => {
 	res.send(req.body);
 });
 
-app.put("/user", async (req, res) => {
+/**app.put("/user", async (req, res) => {
 	console.log(req.body);
 	
 	//User.updateOne({where}, {set});
@@ -50,6 +50,21 @@ app.put("/user", async (req, res) => {
 		}
 	});
 	
+	res.send(u_data);
+});**/
+
+app.put("/user", async (req, res) => {
+	console.log(req.body);
+
+	//User.updateOne({where}, {set});
+	let u_data = await User.updateOne({"_id": req.body._id}, {
+		"$set": {
+			"name" : req.body.name,
+			"age" : req.body.age,
+			"city" : req.body.city
+		}
+	});
+
 	res.send(u_data);
 });
 

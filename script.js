@@ -69,7 +69,7 @@ function postData() {
 }	
 
 
-function putData() {
+/**function putData() {
 	
 	var _id = document.getElementById("id").value;
 	var name = document.getElementById("name").value;
@@ -92,7 +92,30 @@ function putData() {
 		window.location.href = "index.html";
 	})
 }
+**/
+function putData() {
 
+	var _id = document.getElementById("id").value;
+	var name = document.getElementById("name").value;
+	var age = document.getElementById("age").value;
+	var city = document.getElementById("city").value;
+
+	data = {_id: _id, name: name, age: age, city: city};
+
+	fetch(api_url, {
+		method: "PUT",
+		headers: {
+		  'Accept': 'application/json',
+		  'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(data)
+	})
+	.then((response) => response.json())
+	.then((data) => {
+		console.table(data);
+		window.location.href = "index.html";
+	})
+}
 
 function deleteData(id) {
 	user_input = confirm("Are you sure you want to delete this record?");
