@@ -1,6 +1,6 @@
 //const api_url = "<heroku_app_url>"
 const api_url = "https://jojeetawahisikandar.herokuapp.com/user"
-
+//const api_url = "https://127.0.0.1:8080/user"
 function loadData(records = []) {
 	var table_data = "";
 	for(let i=0; i<records.length; i++) {
@@ -17,6 +17,7 @@ function loadData(records = []) {
 	}
 	//console.log(table_data);
 	document.getElementById("tbody").innerHTML = table_data;
+	
 }
 
 function getData() {
